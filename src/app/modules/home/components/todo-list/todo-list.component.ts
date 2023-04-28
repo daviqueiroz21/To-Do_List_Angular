@@ -9,8 +9,23 @@ import { TaskList } from '../../model/task-list';
 export class TodoListComponent {
 
   public taskList: Array<TaskList>= [
-    // {task:"Falar com saulo", checked: false},
-    // {task:"Falar com edmundo", checked: false}
+    {task:"Falar com saulo", checked: false},
+    {task:"Falar com edmundo", checked: false}
   ];
 
+  public deleteItemTaskList(event: number){
+    this.taskList.splice(event, 1);
+  }
+
+  public addItemTasklist(event: TaskList){
+    this.taskList.push(event);
+  }
+
+  public deleteAllTaskList(){
+    const confirm = window.confirm("Você deseja realmente Deletar tudo?");
+
+    if(confirm){
+      this.taskList = [];
+    }
+  }
 }
