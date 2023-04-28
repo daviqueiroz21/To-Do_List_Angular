@@ -17,8 +17,9 @@ export class TodoListComponent {
     this.taskList.splice(event, 1);
   }
 
-  public addItemTasklist(event: TaskList){
-    this.taskList.push(event);
+
+  public setEmitTaskList(event: string){
+    this.taskList.push({task: event, checked: false});
   }
 
   public deleteAllTaskList(){
